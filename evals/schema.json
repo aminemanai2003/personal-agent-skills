@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Personal Agent Skills Evaluations",
+  "type": "object",
+  "required": ["version", "cases"],
+  "properties": {
+    "version": {"type": "integer", "minimum": 1},
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "prompt", "expected_skills", "forbidden_skills", "expected_behavior"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "prompt": {"type": "string", "minLength": 1},
+          "expected_skills": {
+            "type": "array",
+            "items": {"type": "string"},
+            "uniqueItems": true
+          },
+          "forbidden_skills": {
+            "type": "array",
+            "items": {"type": "string"},
+            "uniqueItems": true
+          },
+          "expected_behavior": {"type": "string", "minLength": 1},
+          "fixture": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+
