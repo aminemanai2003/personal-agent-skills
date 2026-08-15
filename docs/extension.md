@@ -3,7 +3,7 @@
 ## Add a skill
 
 1. Confirm the workflow is meaningfully reusable and not already owned by an existing skill.
-2. Run `python scripts/init_skill.py <name> --path skills` if the initializer is available, or create the standard package manually.
+2. Use the host's skill initializer when available, or create the standard package manually (`skills/<name>/SKILL.md` plus only the resources it needs).
 3. Write a concise frontmatter description that says what the skill does and when to trigger it.
 4. Include Purpose, Inputs, Process, Constraints, Verification, Failure Modes, Examples, and Sources sections.
 5. Add original implementation notes and external inspiration to `sources/<name>.sources.md`.
@@ -22,4 +22,3 @@ Put a direct preference in `personal/operating-profile.md` only after it is conf
 ## Provenance
 
 Record the repository, URL, maintainer, adoption/activity signal, license signal, useful principles, adaptation boundary, conflicts, and personal additions. Re-express concepts in original language; do not copy third-party skill bodies or assets wholesale.
-
