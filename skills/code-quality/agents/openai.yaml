@@ -1,0 +1,3 @@
+interface:
+  display_name: "Code Quality"
+  short_description: "Build correct, focused, maintainable code"
