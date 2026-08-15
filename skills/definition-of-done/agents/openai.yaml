@@ -1,0 +1,3 @@
+interface:
+  display_name: "Definition Of Done"
+  short_description: "Match completion claims to direct verification evidence"
