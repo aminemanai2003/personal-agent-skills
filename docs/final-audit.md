@@ -16,14 +16,16 @@ Audit date: 2026-08-15
 | Provenance | 15 `sources/*.sources.md` files plus ecosystem map | Pass |
 | Codex and Claude usability | `scripts/install_skills.py`, `.agents/skills`, `.claude/skills`, adapter docs | Pass for packaging/discovery smoke; model run pending auth |
 | Conflict handling | `architecture/conflicts.md` and explicit scope boundaries in 10 skills | Pass |
-| Realistic evaluation | 48 cases, coverage validator, three refinement iterations | Pass for deterministic workflow evaluation |
+| Realistic evaluation | 48 trigger scenarios, coverage validator, three refinement iterations, and three same-model paired examples | Pass for deterministic artifact coverage; live trigger precision and repeated-run variance remain unmeasured |
 | Usage and extension documentation | `README.md`, `docs/extension.md`, `CONTRIBUTING.md`, adapter docs | Pass |
+| Public reuse license | `LICENSE` and README license section | Pass; MIT License |
 
 ## Verification evidence
 
 - Official `quick_validate.py`: 15/15 skills valid.
 - `scripts/validate_repo.py`: 15 packages validated.
 - `scripts/validate_evals.py`: 48 cases across 15 skills validated.
+- `scripts/validate_showcase.py`: paired image dimensions, reported word counts, and DOI coverage validated.
 - Installer smoke test: 15 Codex packages and 15 Claude packages installed; overwrite safeguards covered by 3 unit tests.
 - `git diff --check`: clean.
 - Authored source ASCII scan: clean.
@@ -37,7 +39,8 @@ What could still feel generic, inconsistent, fragile, or unnecessarily complicat
 - Inconsistency risk is reduced by shared section contracts, precedence, and one canonical skill source.
 - Installer fragility is bounded by idempotence, refusal to overwrite local changes, force opt-in, and tests.
 - Context bloat is bounded by progressive disclosure and behavioral rather than mandatory dependency edges.
-- Remaining limitation: independent repeated Codex/Claude model-run precision/recall is not measured because the Codex smoke session received `401 Unauthorized`; see `evals/results/host-smoke.md`.
+- Remaining limitation: `validate_evals.py` checks static case coverage, not actual model triggering or output quality. Independent repeated Codex/Claude precision, recall, and variance are not measured; see `evals/results/host-smoke.md`.
+- Remaining limitation: the skilled UI showcase has page-level horizontal overflow at the `390 x 844` mobile viewport. It is evidence of stronger domain direction, not a perfect responsive implementation.
 - Detailed workflow preferences remain intentionally unspecified; repository evidence and professional reversible defaults cover them without diluting the confirmed quality priorities.
 
 ## Scope decision

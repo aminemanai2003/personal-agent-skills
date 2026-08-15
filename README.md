@@ -1,124 +1,152 @@
+<div align="center">
+
 # Personal Agent Skills
 
-A private, portable skills system for Amine's coding and research agents.
+**Portable skills for authored UI, natural expert writing, and rigorous AI-assisted research.**
 
-The repository combines reusable workflow knowledge with a small set of personal preferences. The goal is not to make an agent imitate a person mechanically. It is to make good professional judgment more consistent while preserving the ability to challenge weak assumptions.
+15 skills | Codex + Claude Code | 48 trigger scenarios
 
-## Design principles
+[![Validate](https://github.com/aminemanai2003/personal-agent-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/aminemanai2003/personal-agent-skills/actions/workflows/validate.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-- Evidence before completion claims.
-- Inspect the repository and existing patterns before editing.
-- Prefer small, composable workflows over a large instruction dump.
-- Keep the shared skill core portable; put tool-specific behavior in adapters.
-- Distinguish objective engineering quality from personal taste.
-- Record provenance and adapt principles rather than copying external text.
-- Make uncertainty, limitations, and unresolved decisions visible.
+</div>
 
-## Layout
+This repository turns a small set of quality preferences into installable `SKILL.md` packages. The skills do not make a model expert by themselves and they do not guarantee a better result. Their value is narrower: they make important judgment criteria explicit, reusable, and easier to verify across projects.
 
-```text
-personal/       confirmed and inferred operating preferences
-research/       ecosystem map and research notes
-core/           cross-cutting quality and anti-slop rules
-architecture/   dependencies, precedence, and composition rules
-skills/         portable SKILL.md packages
-sources/        provenance notes for composite skills
-adapters/       Codex and Claude Code integration notes
-evals/          realistic scenarios and evaluation records
-decisions/      short architecture decision records
-scripts/        deterministic validation helpers
-```
+## Main objective
 
-## V1 Skill Catalog
+The system is optimized for three outcomes:
 
-- `personal-operating-profile`: apply confirmed and inferred preferences with precedence.
-- `anti-slop`: remove generic, unjustified, and unfinished output.
-- `decision-making`: choose defensible options under incomplete information.
-- `definition-of-done`: match completion claims to direct evidence.
-- `frontend-design`: create domain-specific interface directions.
-- `visual-ux-review`: inspect rendered UI evidence and states.
-- `code-quality`: implement and refactor compatible code.
-- `research-quality`: calibrate claims to credible, reproducible evidence.
-- `personal-writing`: write concise, factual project communication.
-- `github-workflow`: move focused work through GitHub safely.
-- `build-feature`: carry an authorized feature through implementation and handoff.
-- `review-code`: report concrete code defects and regression risk.
-- `review-ui`: orchestrate complete UI readiness reviews and focused fixes.
-- `research-topic`: investigate a question through decision-ready synthesis.
-- `project-start`: orient to an unfamiliar repository before substantial work.
+| Outcome | Standard |
+| --- | --- |
+| Product-specific UI | The workflow, hierarchy, density, content, and visual direction should come from the product domain, not an interchangeable AI dashboard template. |
+| Natural expert writing | Prose should follow the reader's real questions and the material's logic without canned transitions, filler, repeated conclusions, or synthetic cadence. |
+| Serious research work | AI-assisted papers should have a defensible contribution, traceable evidence, reproducible methods, verified citations, bounded conclusions, and explicit limitations. |
 
-## Same-model showcase
+## Do the skills help?
 
-This is a controlled paired example, not a claim that skills guarantee a better result. Both conditions used AgentRouter-hosted `gpt-5.6-sol`, Codex CLI 0.147.0, medium reasoning effort, the same prompt, and isolated Git repositories. The baseline had no project-local skills; the comparison workspace contained only the named skills and their supporting packages. See the [methodology](evals/showcase/methodology.md) and [exact prompts](evals/showcase/prompts/).
+Yes, but not equally.
 
-### UI: `frontend-design` + `anti-slop`
+The skills tied directly to the three outcomes above provide the clearest value. They add explicit tests and procedures that a capable model may not apply consistently on its own. The general engineering and GitHub skills are useful as workflow guardrails, but much of their advice overlaps with behavior already expected from a strong coding agent.
+
+| Area | Current evidence | Verdict |
+| --- | --- | --- |
+| UI | One same-model paired build. The skilled version has a more deliberate actuarial hierarchy, sharper exception-led workflow, and more domain-specific language. It also introduces page-level horizontal overflow at `390x844`, so the result is not an unqualified win. | Directionally useful; mobile quality still needs work. |
+| Writing | One same-model paired passage. The baseline missed the strict word limit at 331 words; the skilled version finished at 320 and led from the actual decision problem. | Clear improvement in this pair. |
+| Research | One same-model paired paper using the same four-source packet. Both were valid; the skilled version made the contribution, claim-evidence structure, and decision protocol more explicit. | Moderate improvement in this pair. |
+| General workflow | Package validators, trigger-case coverage, and installer tests pass. Live trigger precision, recall, and repeated-run variance are not measured. | Useful for consistency, not yet proven as a capability lift. |
+
+These are representative examples, not statistical benchmarks. See the [showcase methodology](evals/showcase/methodology.md) and [exact prompts](evals/showcase/prompts/).
+
+## UI comparison
+
+Both pages below were generated from the same prompt and model, with project-local skill availability as the main difference. They were then re-captured from the unchanged artifacts at the same `1440x960` CSS viewport.
 
 ![Northstar Reserve Review baseline and skilled UI comparison](docs/assets/comparisons/ui-before-after.png)
 
-Both runs produced a working Northstar actuarial reserve-review dashboard from the [same UI prompt](evals/showcase/prompts/ui.md). The baseline is a competent conventional dashboard. With `frontend-design` and `anti-slop`, the result uses a more deliberate actuarial control-room hierarchy, sharper typography, denser exception-led review flow, and domain-specific visual signals rather than relying mainly on a generic navigation-and-card template. Supporting skills available in the skilled condition were `definition-of-done` and `personal-operating-profile`.
+The baseline exposes more conventional navigation and charting. The skilled version is more authored: it frames the page as an actuarial control room, emphasizes exceptions requiring judgment, uses reserve-specific terminology, and makes the review hierarchy easier to scan. The tradeoff is real: the skilled implementation is taller and its mobile layout overflows the page horizontally.
 
-The controls, filtering, uncertainty view, loading, empty, and warning states were exercised in a real browser with no console errors. The desktop image above is the stable comparison surface. Both pages reflow at 390 x 844; the skilled result still has horizontal scrolling around its wide line-of-business table, so this run should not be read as a perfect mobile implementation. [Open the baseline capture](evals/showcase/outputs/ui-before.png) or [the skilled capture](evals/showcase/outputs/ui-after.png).
+<details>
+<summary>View the 390x844 mobile comparison</summary>
 
-### Writing: `personal-writing` + `anti-slop`
+![Northstar Reserve Review mobile baseline and skilled UI comparison](docs/assets/comparisons/ui-mobile-before-after.png)
 
-The [same writing prompt](evals/showcase/prompts/writing.md) asked for a 260-320 word passage for actuarial and machine-learning practitioners. The baseline opened with a generic leaderboard frame and finished at 331 words, outside the requested limit:
+The baseline reflows without page-level horizontal overflow. The skilled result keeps its product-specific hierarchy, but the wide line-of-business table expands the document to `632px`, producing a horizontal page scrollbar.
 
-> A single composite score can make a claims-reserving benchmark easier to rank, but it can also conceal the distinctions that matter most in practice. Predictive accuracy, calibration, stability across accident years, and computational cost answer different questions.
+</details>
 
-With `personal-writing` and `anti-slop`, supported by `personal-operating-profile`, the passage finished at exactly 320 words and led from the actual decision problem:
+The raw captures are available for [desktop baseline](evals/showcase/outputs/ui-before.png), [desktop skilled](evals/showcase/outputs/ui-after.png), [mobile baseline](evals/showcase/outputs/ui-before-mobile.png), and [mobile skilled](evals/showcase/outputs/ui-after-mobile.png).
 
-> A single composite score can obscure the choice a claims-reserving benchmark is meant to inform because its components measure different kinds of performance. Predictive accuracy asks how closely estimates track observed outcomes under a loss function. Calibration asks whether predicted reserve levels or distributions are systematically too high or too low.
+## Skill map
 
-The skilled passage also turns the abstract warning into a concrete governance test: quarterly reporting may penalize instability and miscalibration, while exploratory segmentation may accept volatility for speed or sharper local predictions. Read the [complete baseline](evals/showcase/outputs/writing-before.md) and [complete skilled passage](evals/showcase/outputs/writing-after.md).
+Install only the packages that can change the outcome. Loading all 15 is convenient, but a smaller task-specific set reduces trigger overlap and context cost.
 
-### Research: `research-topic` + `research-quality`
+| Layer | Skills | Role |
+| --- | --- | --- |
+| Quality core | `personal-operating-profile`, `anti-slop`, `definition-of-done` | Apply the confirmed priorities, remove generic output, and tie completion claims to evidence. |
+| UI | `frontend-design`, `visual-ux-review`, `review-ui` | Create a domain-specific direction, inspect rendered states, and run complete UI readiness reviews. |
+| Writing | `personal-writing` | Produce concise, natural, limitation-aware technical prose. |
+| Research | `research-quality`, `research-topic` | Set evidence standards and carry an investigation through synthesis. |
+| Engineering | `project-start`, `decision-making`, `code-quality`, `build-feature`, `review-code` | Orient, decide, implement, verify, and review repository work. |
+| GitHub | `github-workflow` | Move focused work through commits, reviews, checks, and publication without expanding authority. |
 
-Both runs received the same [research prompt](evals/showcase/prompts/research.md) and [controlled source pack](evals/showcase/research/source-pack.md), limited to four DOI-verified sources. Neither condition could browse for extra evidence. The baseline produced a valid 1,482-word note and correctly separated the proposed framework from the cited literature:
+The dependency and conflict boundaries are documented in [architecture/skill-dependencies.md](architecture/skill-dependencies.md) and [architecture/conflicts.md](architecture/conflicts.md).
 
-> The framework begins by identifying the forecast object required: a point reserve, predictive distribution, uncertainty measure, or combination. Evaluation then proceeds across five dimensions. The first three are grounded in the packet's emphasis on prediction and uncertainty; stability and cost are proposed extensions connecting statistical evaluation to repeated operational use.
+## Quick start
 
-With `research-topic`, `research-quality`, `personal-writing`, and `anti-slop`, the 1,438-word note states the contribution more compactly and makes non-compensable constraints explicit:
+Requirements:
 
-> A scalar ranking can make unlike deficiencies appear exchangeable. A gain in point accuracy might numerically offset poor distributional performance, unstable estimates, or an operational burden, even when the use case makes one weakness unacceptable.
+- Python 3.10 or newer.
+- A target project that supports repository-local Codex or Claude Code skills.
 
-Both papers contain the required sections and all four supplied DOIs; neither invents a dataset, experiment, quotation, or universal winner. The skilled version's main advantage in this single pair is a tighter claim-evidence structure and a six-step protocol that ties each metric to the forecast object, consequences of error, thresholds, and validation design. Read the [complete baseline paper](evals/showcase/outputs/research-before.md) and [complete skilled paper](evals/showcase/outputs/research-after.md).
-
-## Install
-
-The canonical source is `skills/`. Install the packages into a target project for both hosts:
+Clone the repository, then install every skill into a target project:
 
 ```powershell
 python scripts/install_skills.py --target C:\path\to\project --host both
 ```
 
-Use `--host codex` or `--host claude` for one host. The installer is idempotent and refuses to overwrite a changed installed skill unless `--force` is supplied.
-
-Codex discovers the installed packages from `.agents/skills`. Claude Code uses `.claude/skills`; host-specific notes are in `adapters/`.
-
-## Use and extend
-
-Read `personal/operating-profile.md` and `core/definition-of-done.md` before extending the system. Read only the relevant skill and referenced material for a task.
-
-To add a skill, use the standard package shape (`SKILL.md`, optional `references/`, `scripts/`, or `assets/`) and add a provenance file under `sources/`. Keep the description trigger-specific, add positive and near-miss cases to `evals/evals.json`, then run:
+Install a smaller set by repeating `--skill`:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/validate_repo.py
-.\.venv\Scripts\python.exe scripts/validate_evals.py
+python scripts/install_skills.py --target C:\path\to\project --host codex `
+  --skill personal-operating-profile `
+  --skill anti-slop `
+  --skill definition-of-done `
+  --skill frontend-design
 ```
 
-The repository uses small commits so each skill or support concern can be reviewed independently. See `docs/extension.md` and `CONTRIBUTING.md` for the full workflow.
+Use `--host codex`, `--host claude`, or `--host both`. The installer is idempotent and refuses to overwrite a changed installed skill unless `--force` is supplied.
 
-## Rule precedence
+Codex discovers packages from `.agents/skills`. Claude Code uses `.claude/skills`. Host-specific notes are in [adapters/codex](adapters/codex/README.md) and [adapters/claude-code](adapters/claude-code/README.md).
 
-1. System and platform safety rules.
-2. Explicit user instructions for the current task.
-3. Repository and project rules discovered in `AGENTS.md`, `CLAUDE.md`, and equivalent files.
-4. Objective engineering quality and applicable standards.
-5. This repository's personal preferences.
-6. A skill's local defaults.
+## Validation
 
-When rules conflict, preserve the higher-precedence rule, state the conflict briefly, and choose the smallest change that satisfies the task.
+Install the development dependency and run the repository checks:
 
-## Status
+```powershell
+python -m pip install -r requirements-dev.txt
+python scripts/validate_repo.py
+python scripts/validate_evals.py
+python scripts/validate_showcase.py
+python -m unittest discover -s tests -v
+```
 
-This repository is usable as a V1 system. The personalization interview confirmed three north-star outcomes: authored non-generic UI, natural expert prose, and rigorous human-expert-quality AI-assisted research papers. Unspecified workflow choices use professional defaults. The deterministic evaluation suite passes; independent repeated model-run variance benchmarks remain a future improvement.
+What these checks prove:
+
+- `validate_repo.py` checks package structure, required sections, provenance files, and agent metadata presence.
+- `validate_evals.py` checks trigger-scenario schema and positive/near-miss coverage. It does not run a model.
+- `validate_showcase.py` checks paired screenshot dimensions, stored word counts, and DOI coverage for the showcase artifacts.
+- The unit tests cover idempotent installation and overwrite protection.
+
+## Repository layout
+
+```text
+skills/         canonical portable skill packages
+personal/       confirmed and inferred operating preferences
+core/           cross-cutting quality contracts
+architecture/   dependency, precedence, and conflict rules
+sources/        provenance and adaptation notes
+adapters/       Codex and Claude Code integration notes
+evals/          trigger scenarios, prompts, outputs, and limitations
+scripts/        installation and deterministic validation helpers
+tests/          installer regression tests
+decisions/      architecture decision records
+```
+
+## Extend the system
+
+Keep a skill concise, trigger-specific, and focused on knowledge or procedure that changes agent behavior. Add detailed material under `references/` only when it should be loaded conditionally. New or changed skills should include provenance plus positive and near-miss trigger cases.
+
+See [docs/extension.md](docs/extension.md) and [CONTRIBUTING.md](CONTRIBUTING.md) for the complete workflow.
+
+## License
+
+This project is released under the [MIT License](LICENSE). You may use, modify, distribute, and sell it, provided the copyright and license notices are retained.
+
+## Project status
+
+The repository is usable as a personal V1, is MIT-licensed for unrestricted reuse, and its local deterministic checks pass. One evidence gap remains:
+
+- Repeated live model runs are still needed to measure trigger precision, result variance, and average quality lift.
+
+The current evidence supports a practical conclusion: the focused UI, writing, and research skills are worth using as judgment scaffolding; the remaining workflow skills should be installed selectively when their orchestration or verification contract is useful.
