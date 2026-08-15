@@ -29,11 +29,30 @@ decisions/      short architecture decision records
 scripts/        deterministic validation helpers
 ```
 
-## Using the repository
+## Install
 
-Codex discovers repository-local skills from `.agents/skills`. During packaging, the canonical skills in `skills/` are mirrored or linked into that location without changing their content. Claude Code can use the same `SKILL.md` files through its project skill/plugin conventions; the thin adapters document any differences.
+The canonical source is `skills/`. Install the packages into a target project for both hosts:
+
+```powershell
+python scripts/install_skills.py --target C:\path\to\project --host both
+```
+
+Use `--host codex` or `--host claude` for one host. The installer is idempotent and refuses to overwrite a changed installed skill unless `--force` is supplied.
+
+Codex discovers the installed packages from `.agents/skills`. Claude Code uses `.claude/skills`; host-specific notes are in `adapters/`.
+
+## Use and extend
 
 Read `personal/operating-profile.md` and `core/definition-of-done.md` before extending the system. Read only the relevant skill and referenced material for a task.
+
+To add a skill, use the standard package shape (`SKILL.md`, optional `references/`, `scripts/`, or `assets/`) and add a provenance file under `sources/`. Keep the description trigger-specific, add positive and near-miss cases to `evals/evals.json`, then run:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/validate_repo.py
+.\.venv\Scripts\python.exe scripts/validate_evals.py
+```
+
+The repository uses small commits so each skill or support concern can be reviewed independently. See `docs/extension.md` and `CONTRIBUTING.md` for the full workflow.
 
 ## Rule precedence
 
@@ -48,5 +67,4 @@ When rules conflict, preserve the higher-precedence rule, state the conflict bri
 
 ## Status
 
-This repository is being built iteratively. Research and architecture are established first; the operating profile and skills are added after the personalization interview and evaluated against realistic tasks.
-
+This repository is usable as a V1 system. The operating profile is evidence-backed but still provisional where the interview worksheet has unanswered personal choices. The deterministic evaluation suite passes; independent repeated model-run variance benchmarks remain a future improvement.
