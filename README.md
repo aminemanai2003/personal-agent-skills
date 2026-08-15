@@ -47,6 +47,42 @@ scripts/        deterministic validation helpers
 - `research-topic`: investigate a question through decision-ready synthesis.
 - `project-start`: orient to an unfamiliar repository before substantial work.
 
+## Same-model showcase
+
+This is a controlled paired example, not a claim that skills guarantee a better result. Both conditions used AgentRouter-hosted `gpt-5.6-sol`, Codex CLI 0.147.0, medium reasoning effort, the same prompt, and isolated Git repositories. The baseline had no project-local skills; the comparison workspace contained only the named skills and their supporting packages. See the [methodology](evals/showcase/methodology.md) and [exact prompts](evals/showcase/prompts/).
+
+### UI: `frontend-design` + `anti-slop`
+
+![Northstar Reserve Review baseline and skilled UI comparison](docs/assets/comparisons/ui-before-after.png)
+
+Both runs produced a working Northstar actuarial reserve-review dashboard from the [same UI prompt](evals/showcase/prompts/ui.md). The baseline is a competent conventional dashboard. With `frontend-design` and `anti-slop`, the result uses a more deliberate actuarial control-room hierarchy, sharper typography, denser exception-led review flow, and domain-specific visual signals rather than relying mainly on a generic navigation-and-card template. Supporting skills available in the skilled condition were `definition-of-done` and `personal-operating-profile`.
+
+The controls, filtering, uncertainty view, loading, empty, and warning states were exercised in a real browser with no console errors. The desktop image above is the stable comparison surface. Both pages reflow at 390 x 844; the skilled result still has horizontal scrolling around its wide line-of-business table, so this run should not be read as a perfect mobile implementation. [Open the baseline capture](evals/showcase/outputs/ui-before.png) or [the skilled capture](evals/showcase/outputs/ui-after.png).
+
+### Writing: `personal-writing` + `anti-slop`
+
+The [same writing prompt](evals/showcase/prompts/writing.md) asked for a 260-320 word passage for actuarial and machine-learning practitioners. The baseline opened with a generic leaderboard frame and finished at 331 words, outside the requested limit:
+
+> A single composite score can make a claims-reserving benchmark easier to rank, but it can also conceal the distinctions that matter most in practice. Predictive accuracy, calibration, stability across accident years, and computational cost answer different questions.
+
+With `personal-writing` and `anti-slop`, supported by `personal-operating-profile`, the passage finished at exactly 320 words and led from the actual decision problem:
+
+> A single composite score can obscure the choice a claims-reserving benchmark is meant to inform because its components measure different kinds of performance. Predictive accuracy asks how closely estimates track observed outcomes under a loss function. Calibration asks whether predicted reserve levels or distributions are systematically too high or too low.
+
+The skilled passage also turns the abstract warning into a concrete governance test: quarterly reporting may penalize instability and miscalibration, while exploratory segmentation may accept volatility for speed or sharper local predictions. Read the [complete baseline](evals/showcase/outputs/writing-before.md) and [complete skilled passage](evals/showcase/outputs/writing-after.md).
+
+### Research: `research-topic` + `research-quality`
+
+Both runs received the same [research prompt](evals/showcase/prompts/research.md) and [controlled source pack](evals/showcase/research/source-pack.md), limited to four DOI-verified sources. Neither condition could browse for extra evidence. The baseline produced a valid 1,482-word note and correctly separated the proposed framework from the cited literature:
+
+> The framework begins by identifying the forecast object required: a point reserve, predictive distribution, uncertainty measure, or combination. Evaluation then proceeds across five dimensions. The first three are grounded in the packet's emphasis on prediction and uncertainty; stability and cost are proposed extensions connecting statistical evaluation to repeated operational use.
+
+With `research-topic`, `research-quality`, `personal-writing`, and `anti-slop`, the 1,438-word note states the contribution more compactly and makes non-compensable constraints explicit:
+
+> A scalar ranking can make unlike deficiencies appear exchangeable. A gain in point accuracy might numerically offset poor distributional performance, unstable estimates, or an operational burden, even when the use case makes one weakness unacceptable.
+
+Both papers contain the required sections and all four supplied DOIs; neither invents a dataset, experiment, quotation, or universal winner. The skilled version's main advantage in this single pair is a tighter claim-evidence structure and a six-step protocol that ties each metric to the forecast object, consequences of error, thresholds, and validation design. Read the [complete baseline paper](evals/showcase/outputs/research-before.md) and [complete skilled paper](evals/showcase/outputs/research-after.md).
+
 ## Install
 
 The canonical source is `skills/`. Install the packages into a target project for both hosts:

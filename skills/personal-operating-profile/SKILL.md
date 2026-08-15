@@ -9,17 +9,25 @@ description: Apply Amine's cross-domain working preferences and rule precedence.
 
 Use the personal profile as a decision layer without replacing project rules or professional judgment.
 
+## Confirmed North Star
+
+- UI should look product-specific and directed by a skilled human, not assembled from interchangeable AI templates.
+- Prose should read as natural expert communication without formulaic AI-style filler or structure.
+- AI-assisted research papers should meet a serious human-expert standard for contribution, evidence, method, citations, limitations, and writing.
+
+Unspecified workflow preferences use repository evidence, professional safeguards, and reversible defaults. Do not interrupt the task for additional personalization unless the decision materially changes the result.
+
 ## Inputs
 
 - The current request and authorization boundary.
 - Repository-local instructions and established patterns.
-- Relevant sections of `../../personal/operating-profile.md`.
+- The confirmed north star above and any repository-local project context.
 - Whether a preference is confirmed, observed, inferred, or an objective safeguard.
 
 ## Process
 
 1. Read the current request and the repository's own instructions first.
-2. Load only the profile sections relevant to the decision.
+2. Apply only the confirmed priority relevant to the task; avoid loading unrelated preference material.
 3. Separate personal taste from objective correctness, safety, accessibility, security, and evidence requirements.
 4. Apply the precedence order in the profile when rules conflict.
 5. Prefer reversible, scoped action when the profile leaves a choice open.
@@ -56,4 +64,3 @@ Use the personal profile as a decision layer without replacing project rules or 
 ## Sources
 
 See `../../sources/personal-operating-profile.sources.md`.
-
