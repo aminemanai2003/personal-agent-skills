@@ -29,6 +29,24 @@ decisions/      short architecture decision records
 scripts/        deterministic validation helpers
 ```
 
+## V1 Skill Catalog
+
+- `personal-operating-profile`: apply confirmed and inferred preferences with precedence.
+- `anti-slop`: remove generic, unjustified, and unfinished output.
+- `decision-making`: choose defensible options under incomplete information.
+- `definition-of-done`: match completion claims to direct evidence.
+- `frontend-design`: create domain-specific interface directions.
+- `visual-ux-review`: inspect rendered UI evidence and states.
+- `code-quality`: implement and refactor compatible code.
+- `research-quality`: calibrate claims to credible, reproducible evidence.
+- `personal-writing`: write concise, factual project communication.
+- `github-workflow`: move focused work through GitHub safely.
+- `build-feature`: carry an authorized feature through implementation and handoff.
+- `review-code`: report concrete code defects and regression risk.
+- `review-ui`: orchestrate complete UI readiness reviews and focused fixes.
+- `research-topic`: investigate a question through decision-ready synthesis.
+- `project-start`: orient to an unfamiliar repository before substantial work.
+
 ## Install
 
 The canonical source is `skills/`. Install the packages into a target project for both hosts:
