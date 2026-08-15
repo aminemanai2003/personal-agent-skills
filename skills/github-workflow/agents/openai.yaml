@@ -1,0 +1,3 @@
+interface:
+  display_name: "GitHub Workflow"
+  short_description: "Move focused changes safely through GitHub"
