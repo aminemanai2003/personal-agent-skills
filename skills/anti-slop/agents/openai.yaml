@@ -1,0 +1,3 @@
+interface:
+  display_name: "Anti Slop"
+  short_description: "Remove generic, unjustified, and unfinished output"
