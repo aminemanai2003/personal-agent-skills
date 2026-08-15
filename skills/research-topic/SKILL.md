@@ -1,6 +1,6 @@
 ---
 name: research-topic
-description: Carry a substantive research question from framing through source collection, comparison, synthesis, and decision-ready reporting. Use when the user asks to investigate a technology, method, ecosystem, scientific or actuarial topic, benchmark options, or produce an evidence-backed recommendation.
+description: Carry a substantive research question from framing through source collection, analysis, original synthesis, and expert reporting. Use when the user asks to investigate a technology, method, scientific or actuarial topic, benchmark options, produce an evidence-backed recommendation, or develop a rigorous research paper.
 ---
 
 # Research Topic
@@ -30,8 +30,10 @@ This owns an end-to-end research question and decision-ready synthesis. Use `res
 6. Extract facts separately from calculations, assumptions, and interpretation.
 7. Compare options on task-relevant dimensions without manufacturing a universal score.
 8. Seek disconfirming evidence, reconcile contradictions, and test key claims with a small experiment when practical.
-9. Synthesize the answer: outcome first, strongest evidence, tradeoffs, limitations, and next decision.
-10. Audit material claims against sources and stop when new research is unlikely to change the decision.
+9. For a paper, build a claim-evidence outline and read `references/research-paper-standard.md` before prose drafting.
+10. Synthesize an original argument: outcome first, strongest evidence, tradeoffs, limitations, and implications. Do not reproduce the order or phrasing of source summaries.
+11. Edit for natural expert prose: remove canned transitions, repetitive framing, generic significance claims, and paragraphs without evidence or reasoning.
+12. Audit material claims and citation metadata against sources; stop when new research is unlikely to change the decision or argument.
 
 ## Constraints
 
@@ -40,6 +42,8 @@ This owns an end-to-end research question and decision-ready synthesis. Use `res
 - Do not copy source text beyond necessary quotation and license limits.
 - Do not hide unavailable sources or failed reproductions.
 - Do not turn separate quantitative dimensions into an arbitrary composite ranking.
+- Do not present generated prose, citations, calculations, or interpretations as verified until they have been checked.
+- Do not make the paper sound authoritative by hiding methodological uncertainty or required AI-use disclosure.
 
 ## Verification
 
@@ -48,6 +52,7 @@ This owns an end-to-end research question and decision-ready synthesis. Use `res
 - Calculations or experiments include enough method detail to reproduce them.
 - Conflicts and uncertainty are visible in the synthesis.
 - The recommendation follows from the evidence and stated priorities.
+- The paper makes a specific contribution, preserves a traceable argument, and reads as one authored work rather than stitched summaries.
 
 ## Failure Modes
 
@@ -56,6 +61,7 @@ This owns an end-to-end research question and decision-ready synthesis. Use `res
 - Overclaiming from one benchmark or dataset.
 - Treating lack of primary access as permission to imply certainty.
 - Continuing research because no explicit stop condition was set.
+- A polished manuscript with no defensible contribution, shallow literature engagement, or generic discussion.
 
 ## Examples
 
@@ -66,3 +72,5 @@ This owns an end-to-end research question and decision-ready synthesis. Use `res
 ## Sources
 
 See `../../sources/research-topic.sources.md`.
+
+For academic manuscripts, read `references/research-paper-standard.md`.

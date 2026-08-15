@@ -1,6 +1,6 @@
 ---
 name: research-quality
-description: Define evidence standards for technical, product, scientific, actuarial, and quantitative research. Use when gathering sources, comparing tools or methods, making factual claims, designing benchmarks, interpreting data, or reviewing research credibility.
+description: Define expert evidence standards for technical, product, scientific, actuarial, and quantitative research. Use when gathering sources, writing or reviewing research papers, comparing methods, making factual claims, designing benchmarks, interpreting data, or assessing research credibility.
 ---
 
 # Research Quality
@@ -29,7 +29,8 @@ This skill supplies evidence standards for any research. Use `research-topic` wh
 5. Separate extracted facts, calculations, assumptions, and interpretation.
 6. For quantitative work, preserve data lineage, method, parameters, units, and uncertainty.
 7. Test alternative explanations and look for disconfirming evidence.
-8. Synthesize the answer with confidence calibrated to evidence strength.
+8. For papers, define the contribution and claim-evidence structure before drafting prose; use `../research-topic/references/research-paper-standard.md`.
+9. Synthesize the answer with confidence calibrated to evidence strength.
 
 ## Constraints
 
@@ -38,6 +39,9 @@ This skill supplies evidence standards for any research. Use `research-topic` wh
 - Do not collapse different metrics into an arbitrary score.
 - Do not rank methods universally when results depend on domain, data, or operating constraints.
 - Do not hide contradictory evidence or inaccessible primary sources.
+- Do not fabricate or guess a citation, DOI, quotation, author, venue, page, or publication date.
+- Do not stitch source summaries into a paper without original synthesis and a defensible contribution.
+- Do not conceal AI assistance where institutional or publication rules require disclosure.
 
 ## Verification
 
@@ -46,6 +50,8 @@ This skill supplies evidence standards for any research. Use `research-topic` wh
 - Calculations are reproducible with units and assumptions.
 - Conflicts, uncertainty, and domain limits are explicit.
 - The conclusion answers the framed question without exceeding the evidence.
+- Citation metadata and quoted material were checked against the source itself.
+- A paper's abstract, introduction, method, results, discussion, and limitations agree about what was actually done and found.
 
 ## Failure Modes
 
@@ -54,6 +60,7 @@ This skill supplies evidence standards for any research. Use `research-topic` wh
 - Reporting benchmark numbers without hardware, data, or method context.
 - Confusing absence of evidence with evidence of absence.
 - Producing a polished narrative before checking provenance.
+- A fluent paper whose contribution is vague, citations are ornamental, or method cannot be reproduced.
 
 ## Examples
 
