@@ -8,6 +8,8 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .venv/
+.agents/skills/
+.claude/skills/
 node_modules/
 dist/
 build/
