@@ -1,5 +1,17 @@
 # Personal Operating Interview
 
+Status: complete for V1
+
+## Confirmed response
+
+Amine's priorities are:
+
+1. Non-generic UI that reflects human expert judgment and avoids visual slop.
+2. Natural, specific writing without formulaic AI-style signals or prose slop.
+3. Top-quality AI-assisted research papers that meet a human expert standard and avoid generic or synthetic-sounding scholarship.
+
+No further workflow-preference interview is required for V1. The remaining questions below are retained only as future optional refinements.
+
 Answer only the decisions that cannot be inferred from existing repositories. Short answers are enough; examples are more useful than adjectives.
 
 ## 1. Autonomy and risk
@@ -41,4 +53,3 @@ Answer only the decisions that cannot be inferred from existing repositories. Sh
 ## 7. Success signal
 
 - Name one recent agent result that felt excellent and one that felt generic or risky. What specifically made the difference?
-
