@@ -1,0 +1,3 @@
+interface:
+  display_name: "Visual Ux Review"
+  short_description: "Review rendered UI states with user-impact evidence"
