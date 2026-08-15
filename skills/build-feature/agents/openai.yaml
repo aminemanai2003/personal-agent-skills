@@ -1,0 +1,3 @@
+interface:
+  display_name: "Build Feature"
+  short_description: "Implement scoped features through verified handoff"
