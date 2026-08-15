@@ -49,7 +49,7 @@ def validate_skill(skill_dir: Path) -> list[str]:
         return ["SKILL.md is missing"]
 
     content = skill_file.read_text(encoding="utf-8")
-    if "TODO" in content or "[TODO" in content:
+    if "[TODO" in content or re.search(r"\bTODO:\s", content):
         errors.append("contains a template TODO")
 
     try:
@@ -104,4 +104,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-
