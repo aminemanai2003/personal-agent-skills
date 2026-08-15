@@ -1,6 +1,6 @@
 ---
 name: definition-of-done
-description: Select and enforce proportional completion evidence for code, UI, research, documentation, and GitHub work. Use before claiming completion, handing work off, merging, publishing, or deciding whether verification is sufficient.
+description: Select and enforce proportional completion evidence for code, UI, research, documentation, and GitHub work. Use when preparing to claim completion, hand work off, merge, publish, or decide whether verification is sufficient.
 ---
 
 # Definition Of Done
