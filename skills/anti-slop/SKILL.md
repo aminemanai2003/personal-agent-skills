@@ -28,7 +28,8 @@ Use this as a cross-cutting critique pass. It does not replace a domain review o
 4. Check for hidden incompleteness: placeholder content, untested paths, missing states, vague citations, or completion claims based on one command.
 5. Remove unnecessary elements before adding compensating explanation.
 6. Replace remaining generic choices with domain-specific ones supported by the brief or repository.
-7. Re-run the checks that prove the user-visible contract.
+7. Apply the relabeling test to UI and prose: if the structure survives unchanged when the subject is swapped, it is probably generic.
+8. Re-run the checks that prove the user-visible contract.
 
 ## Constraints
 
@@ -40,6 +41,7 @@ Use this as a cross-cutting critique pass. It does not replace a domain review o
 ## Verification
 
 - Every prominent element has a task-specific reason.
+- UI and prose contain subject-specific structure, not merely subject-specific nouns.
 - No placeholders, invented claims, unexplained metrics, or decorative filler remain.
 - The result covers relevant failure and edge states.
 - Completion claims name the evidence that supports them.
@@ -50,6 +52,7 @@ Use this as a cross-cutting critique pass. It does not replace a domain review o
 - Cosmetic cleanup that leaves an incorrect workflow untouched.
 - Adding a new framework or design system to make output look intentional.
 - Replacing one visual cliche with another.
+- Polishing a generic template until it looks expensive without making it specific.
 - Rewriting concise factual prose into a longer style guide performance.
 - Declaring work clean because search found no `TODO` markers.
 

@@ -10,4 +10,6 @@ Before a substantial interface build, capture:
 - Supported viewports, input methods, and accessibility constraints.
 - Palette roles, typography roles, layout tracks, and one signature choice.
 - What would make this design look generic for the subject.
-
+- Which real domain materials, data shapes, terminology, or workflows should shape the visual system.
+- What must structurally change if the same design is relabeled for an unrelated product.
+- Which single expert judgment makes the interface feel authored rather than assembled.
