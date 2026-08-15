@@ -85,4 +85,4 @@ When rules conflict, preserve the higher-precedence rule, state the conflict bri
 
 ## Status
 
-This repository is usable as a V1 system. The operating profile is evidence-backed but still provisional where the interview worksheet has unanswered personal choices. The deterministic evaluation suite passes; independent repeated model-run variance benchmarks remain a future improvement.
+This repository is usable as a V1 system. The personalization interview confirmed three north-star outcomes: authored non-generic UI, natural expert prose, and rigorous human-expert-quality AI-assisted research papers. Unspecified workflow choices use professional defaults. The deterministic evaluation suite passes; independent repeated model-run variance benchmarks remain a future improvement.
