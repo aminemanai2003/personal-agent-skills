@@ -1,0 +1,321 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "profile-01",
+      "prompt": "I am starting a substantial change in an unfamiliar repo. Decide what context to load and whether to proceed or ask me first.",
+      "expected_skills": ["personal-operating-profile", "project-start", "decision-making"],
+      "forbidden_skills": ["personal-writing"],
+      "expected_behavior": "Apply rule precedence, inspect the repo, and proceed on reversible work while escalating only material authority choices."
+    },
+    {
+      "id": "profile-02",
+      "prompt": "Keep the implementation professional but align the handoff and UI choices with my established preferences from this repository.",
+      "expected_skills": ["personal-operating-profile", "personal-writing"],
+      "forbidden_skills": ["research-topic"],
+      "expected_behavior": "Load relevant profile sections, distinguish observed from inferred preferences, and avoid applying unrelated defaults."
+    },
+    {
+      "id": "profile-03",
+      "prompt": "Fix the typo in this one README sentence.",
+      "expected_skills": ["personal-writing"],
+      "forbidden_skills": ["personal-operating-profile", "project-start"],
+      "expected_behavior": "Make the narrow edit without loading the full operating profile or performing project orientation."
+    },
+    {
+      "id": "anti-slop-01",
+      "prompt": "Review this dashboard mockup: it has a hero, three decorative cards, and no loading or error states. Make it useful for daily operations.",
+      "expected_skills": ["anti-slop", "review-ui", "visual-ux-review"],
+      "forbidden_skills": ["research-topic"],
+      "expected_behavior": "Remove generic decoration, preserve useful operational grouping, and add or report missing workflow states with rendered evidence."
+    },
+    {
+      "id": "anti-slop-02",
+      "prompt": "The benchmark report ranks models with one unexplained composite score. Critique the result before publication.",
+      "expected_skills": ["anti-slop", "research-quality", "research-topic"],
+      "forbidden_skills": ["frontend-design"],
+      "expected_behavior": "Separate the measured dimensions, expose weighting assumptions, and remove unsupported universal claims."
+    },
+    {
+      "id": "anti-slop-03",
+      "prompt": "Run the existing unit test command and tell me whether it passed.",
+      "expected_skills": [],
+      "forbidden_skills": ["anti-slop", "frontend-design"],
+      "expected_behavior": "Run the requested focused command and report its result without an unnecessary anti-slop review."
+    },
+    {
+      "id": "decision-01",
+      "prompt": "We can hand-parse a real grammar or add a maintained parser dependency. Decide which approach fits this service.",
+      "expected_skills": ["decision-making", "code-quality"],
+      "forbidden_skills": ["github-workflow"],
+      "expected_behavior": "Inspect local patterns and constraints, compare maintenance and correctness, then choose or ask only if the tradeoff is personal or irreversible."
+    },
+    {
+      "id": "decision-02",
+      "prompt": "Two module boundaries could support this feature. Give one recommendation with the assumptions and a condition for revisiting it.",
+      "expected_skills": ["decision-making", "project-start"],
+      "forbidden_skills": ["personal-writing"],
+      "expected_behavior": "Use repository evidence, keep the options bounded, recommend the smallest reversible choice, and record consequences."
+    },
+    {
+      "id": "decision-03",
+      "prompt": "Implement the exact architecture I already selected in the issue.",
+      "expected_skills": ["build-feature"],
+      "forbidden_skills": ["decision-making"],
+      "expected_behavior": "Honor the explicit decision and focus on implementation unless new evidence reveals a blocking conflict."
+    },
+    {
+      "id": "done-01",
+      "prompt": "Before merging this API change, determine which checks are sufficient and what evidence the handoff must report.",
+      "expected_skills": ["definition-of-done", "github-workflow"],
+      "forbidden_skills": ["frontend-design"],
+      "expected_behavior": "Map changed contracts to proportional tests and checks, review the final diff, and report skipped verification or risk."
+    },
+    {
+      "id": "done-02",
+      "prompt": "Audit whether this research project actually satisfies its stopping conditions before we call it complete.",
+      "expected_skills": ["definition-of-done", "research-quality"],
+      "forbidden_skills": ["build-feature"],
+      "expected_behavior": "Check every stated outcome against direct evidence and continue or report remaining gaps rather than relying on a plausible narrative."
+    },
+    {
+      "id": "done-03",
+      "prompt": "Orient me to this repository before we choose the first feature.",
+      "expected_skills": ["project-start"],
+      "forbidden_skills": ["definition-of-done"],
+      "expected_behavior": "Build a compact project map; do not perform a completion audit before any work exists."
+    },
+    {
+      "id": "frontend-01",
+      "prompt": "Build a new operations dashboard for dense daily scanning, with filters, status, and clear failure states.",
+      "expected_skills": ["frontend-design", "build-feature"],
+      "forbidden_skills": ["review-ui"],
+      "expected_behavior": "Define a domain-specific visual direction, implement the workflow and states, and avoid generic marketing composition."
+    },
+    {
+      "id": "frontend-02",
+      "prompt": "Create the first viewport for a product page that must show the actual object and lead users into the next section.",
+      "expected_skills": ["frontend-design"],
+      "forbidden_skills": ["review-code"],
+      "expected_behavior": "Use the subject as the visual thesis, preserve the real object in the first viewport, and keep typography and layout intentional."
+    },
+    {
+      "id": "frontend-03",
+      "prompt": "Review this existing page at 390px and 1440px and list the most important UX defects.",
+      "expected_skills": ["review-ui", "visual-ux-review"],
+      "forbidden_skills": ["frontend-design"],
+      "expected_behavior": "Inspect rendered states and report evidence-based findings without inventing a new design direction."
+    },
+    {
+      "id": "visual-01",
+      "prompt": "Use the running app to inspect the checkout flow on desktop and mobile, including validation and server-error states.",
+      "expected_skills": ["visual-ux-review", "review-ui"],
+      "forbidden_skills": ["frontend-design"],
+      "expected_behavior": "Exercise realistic states, check interaction and layout stability, and report prioritized findings with viewport evidence."
+    },
+    {
+      "id": "visual-02",
+      "prompt": "The screenshot looks polished, but I need evidence that keyboard focus, reduced motion, and empty states work.",
+      "expected_skills": ["visual-ux-review"],
+      "forbidden_skills": ["personal-writing"],
+      "expected_behavior": "Inspect behavior beyond the polished screenshot and mark anything unavailable as untested."
+    },
+    {
+      "id": "visual-03",
+      "prompt": "Choose a palette and typography direction for a new analytics interface.",
+      "expected_skills": ["frontend-design"],
+      "forbidden_skills": ["visual-ux-review"],
+      "expected_behavior": "Design the direction rather than reviewing a rendered artifact."
+    },
+    {
+      "id": "code-01",
+      "prompt": "Implement a typed validation boundary for this API and add tests for malformed payloads.",
+      "expected_skills": ["code-quality", "build-feature"],
+      "forbidden_skills": ["review-code"],
+      "expected_behavior": "Inspect local patterns, make invalid states explicit, preserve the contract, and test observable behavior."
+    },
+    {
+      "id": "code-02",
+      "prompt": "Refactor this shared module without breaking existing callers or introducing a speculative abstraction.",
+      "expected_skills": ["code-quality", "decision-making"],
+      "forbidden_skills": ["research-topic"],
+      "expected_behavior": "Trace ownership and compatibility, make a focused structural change, and verify callers and tests."
+    },
+    {
+      "id": "code-03",
+      "prompt": "Review this pull request for correctness and security; do not change the files.",
+      "expected_skills": ["review-code"],
+      "forbidden_skills": ["code-quality", "build-feature"],
+      "expected_behavior": "Review intent, tests, and changed paths and report findings without mutating the patch."
+    },
+    {
+      "id": "research-quality-01",
+      "prompt": "Design a reproducible benchmark for comparing two actuarial methods, including uncertainty and assumptions.",
+      "expected_skills": ["research-quality", "research-topic"],
+      "forbidden_skills": ["decision-making"],
+      "expected_behavior": "Define metrics separately, preserve data lineage and method details, and avoid arbitrary composite rankings."
+    },
+    {
+      "id": "research-quality-02",
+      "prompt": "Check whether these five claims in a technical report are actually supported by credible sources.",
+      "expected_skills": ["research-quality"],
+      "forbidden_skills": ["personal-writing"],
+      "expected_behavior": "Map material claims to inspectable sources, expose conflicts, and calibrate certainty."
+    },
+    {
+      "id": "research-quality-03",
+      "prompt": "Fix the failing test in the parser and run the focused test suite.",
+      "expected_skills": ["build-feature", "code-quality"],
+      "forbidden_skills": ["research-quality"],
+      "expected_behavior": "Debug and implement against repository evidence rather than conducting a research-quality source review."
+    },
+    {
+      "id": "writing-01",
+      "prompt": "Draft the pull request description with the result first, verification, limitations, and no marketing language.",
+      "expected_skills": ["personal-writing", "github-workflow"],
+      "forbidden_skills": ["frontend-design"],
+      "expected_behavior": "Write concise findings-first project communication tied to actual evidence."
+    },
+    {
+      "id": "writing-02",
+      "prompt": "Turn these research notes into a short README section that distinguishes facts, assumptions, and open risks.",
+      "expected_skills": ["personal-writing", "research-quality"],
+      "forbidden_skills": ["build-feature"],
+      "expected_behavior": "Use plain active language and preserve uncertainty without inflating claims."
+    },
+    {
+      "id": "writing-03",
+      "prompt": "Add the requested endpoint and tests to the service.",
+      "expected_skills": ["build-feature"],
+      "forbidden_skills": ["personal-writing"],
+      "expected_behavior": "Implement the behavior; do not trigger a writing workflow unless a communication artifact is requested."
+    },
+    {
+      "id": "github-01",
+      "prompt": "Inspect PR 31, address valid review feedback, run checks, merge it, and verify the final GitHub state.",
+      "expected_skills": ["github-workflow", "review-code", "definition-of-done"],
+      "forbidden_skills": ["project-start"],
+      "expected_behavior": "Inspect live threads and checks, implement only authorized fixes, merge with current evidence, and confirm the result."
+    },
+    {
+      "id": "github-02",
+      "prompt": "The pull request CI is red. Read the failing job and logs before deciding what to change.",
+      "expected_skills": ["github-workflow", "decision-making"],
+      "forbidden_skills": ["frontend-design"],
+      "expected_behavior": "Diagnose the current check state and root cause before editing or publishing."
+    },
+    {
+      "id": "github-03",
+      "prompt": "Implement this local helper in the current working tree; do not push or open a PR.",
+      "expected_skills": ["build-feature", "code-quality"],
+      "forbidden_skills": ["github-workflow"],
+      "expected_behavior": "Make the local change and verify it without external GitHub actions."
+    },
+    {
+      "id": "build-01",
+      "prompt": "Add a feature that spans the API, database migration, UI controls, tests, and documentation. Carry it through to a verified handoff.",
+      "expected_skills": ["build-feature", "code-quality", "definition-of-done"],
+      "forbidden_skills": ["review-code"],
+      "expected_behavior": "Orient, define scope, implement incrementally, cover states and compatibility, and report direct evidence."
+    },
+    {
+      "id": "build-02",
+      "prompt": "Implement the requested UI action and make sure pending, success, validation, access, and server-error states are complete.",
+      "expected_skills": ["build-feature", "frontend-design"],
+      "forbidden_skills": ["review-ui"],
+      "expected_behavior": "Build the workflow rather than only styling the happy path, then verify relevant renders."
+    },
+    {
+      "id": "build-03",
+      "prompt": "Read this diff and tell me whether it should merge. Do not edit it.",
+      "expected_skills": ["review-code", "github-workflow"],
+      "forbidden_skills": ["build-feature"],
+      "expected_behavior": "Review and report findings without turning a review-only task into implementation."
+    },
+    {
+      "id": "review-code-01",
+      "prompt": "Review this PR for regressions, security issues, and missing tests. Put actionable findings first with file and line references.",
+      "expected_skills": ["review-code"],
+      "forbidden_skills": ["build-feature"],
+      "expected_behavior": "Understand intent and tests, trace important paths, and report concrete findings ordered by severity."
+    },
+    {
+      "id": "review-code-02",
+      "prompt": "Perform a second pass over this API patch and say clearly if there are no findings, including remaining test gaps.",
+      "expected_skills": ["review-code", "definition-of-done"],
+      "forbidden_skills": ["code-quality"],
+      "expected_behavior": "Review the current patch without rewriting it and distinguish no findings from unverified risk."
+    },
+    {
+      "id": "review-code-03",
+      "prompt": "Build the missing authorization check and add a regression test.",
+      "expected_skills": ["build-feature", "code-quality"],
+      "forbidden_skills": ["review-code"],
+      "expected_behavior": "Implement and verify the fix rather than producing review findings only."
+    },
+    {
+      "id": "review-ui-01",
+      "prompt": "Review the running admin screen at 375px and 1440px and fix only defects that block or degrade the main workflow.",
+      "expected_skills": ["review-ui", "visual-ux-review"],
+      "forbidden_skills": ["frontend-design"],
+      "expected_behavior": "Inspect rendered states, prioritize user impact, make focused authorized fixes, and rerender affected states."
+    },
+    {
+      "id": "review-ui-02",
+      "prompt": "Is this dashboard ready for frontend merge? Check keyboard access, error states, text fit, and responsive layout.",
+      "expected_skills": ["review-ui", "definition-of-done"],
+      "forbidden_skills": ["build-feature"],
+      "expected_behavior": "Review the rendered workflow and report evidence-based readiness or blockers."
+    },
+    {
+      "id": "review-ui-03",
+      "prompt": "Design a new dashboard from this product brief and choose an intentional visual direction.",
+      "expected_skills": ["frontend-design", "build-feature"],
+      "forbidden_skills": ["review-ui"],
+      "expected_behavior": "Create the interface direction and workflow; do not review an artifact that does not yet exist."
+    },
+    {
+      "id": "research-topic-01",
+      "prompt": "Investigate whether Playwright, Cypress, or browser DevTools is the best fit for this repository and recommend one.",
+      "expected_skills": ["research-topic", "research-quality", "decision-making"],
+      "forbidden_skills": ["build-feature"],
+      "expected_behavior": "Frame decisive evidence, inspect primary sources and local fit, compare options, and synthesize a conditional recommendation."
+    },
+    {
+      "id": "research-topic-02",
+      "prompt": "Research the evidence for a new mortality model, reproduce the relevant benchmark, and explain domain limitations.",
+      "expected_skills": ["research-topic", "research-quality"],
+      "forbidden_skills": ["personal-writing"],
+      "expected_behavior": "Preserve data lineage, method details, uncertainty, contradictions, and domain-specific limitations."
+    },
+    {
+      "id": "research-topic-03",
+      "prompt": "Use this official API page to verify one parameter name in our code.",
+      "expected_skills": ["research-quality", "code-quality"],
+      "forbidden_skills": ["research-topic"],
+      "expected_behavior": "Perform a narrow source verification and code correction without launching a broad research project."
+    },
+    {
+      "id": "project-start-01",
+      "prompt": "We just cloned this monorepo. Map the packages, commands, tests, generated files, and the narrowest first milestone.",
+      "expected_skills": ["project-start", "personal-operating-profile"],
+      "forbidden_skills": ["build-feature"],
+      "expected_behavior": "Inspect progressively, cite real paths and verified commands, identify boundaries, and define a testable first outcome."
+    },
+    {
+      "id": "project-start-02",
+      "prompt": "Start work on this unfamiliar service without reading the entire repository. Give me a compact project map first.",
+      "expected_skills": ["project-start"],
+      "forbidden_skills": ["review-code"],
+      "expected_behavior": "Load only relevant persistent and task context, then state evidence, inferences, risks, and next workflow."
+    },
+    {
+      "id": "project-start-03",
+      "prompt": "The exact file and test command are already known. Add the requested one-line fix and report the result.",
+      "expected_skills": ["build-feature", "definition-of-done"],
+      "forbidden_skills": ["project-start"],
+      "expected_behavior": "Skip broad orientation and make the narrow change with proportional verification."
+    }
+  ]
+}
+
