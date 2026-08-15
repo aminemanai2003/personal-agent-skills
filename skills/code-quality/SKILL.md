@@ -16,6 +16,10 @@ Produce code that fits the existing system, makes behavior explicit, and remains
 - Data, security, performance, and compatibility boundaries.
 - Available commands for tests, linting, typing, builds, and formatting.
 
+## Scope Boundary
+
+This skill governs implementation and refactoring. For a review-only request, use `review-code`; for a complete authorized feature, compose this skill through `build-feature`.
+
 ## Process
 
 1. Read the files to change, their tests, and one comparable implementation.
@@ -60,4 +64,3 @@ Produce code that fits the existing system, makes behavior explicit, and remains
 ## Sources
 
 See `../../sources/code-quality.sources.md`.
-

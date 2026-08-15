@@ -16,6 +16,10 @@ Build the smallest reliable project map needed to make correct early decisions w
 - Relevant source, test, schema, and deployment entry points.
 - Existing issue/spec and known constraints.
 
+## Scope Boundary
+
+Use this for orientation before substantial work. Skip it for a narrow task when the relevant files, command, and contract are already known.
+
 ## Process
 
 1. Inspect repository status and locate instruction files without modifying anything.
@@ -61,4 +65,3 @@ Build the smallest reliable project map needed to make correct early decisions w
 ## Sources
 
 See `../../sources/project-start.sources.md`.
-

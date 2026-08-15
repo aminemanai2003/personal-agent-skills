@@ -16,6 +16,10 @@ Raise specificity and usefulness by removing choices that are present because th
 - The draft implementation or output.
 - Verification evidence already collected.
 
+## Scope Boundary
+
+Use this as a cross-cutting critique pass. It does not replace a domain review or implementation workflow; pair it with the skill that owns the code, UI, research, or writing task.
+
 ## Process
 
 1. Restate the output's job in one concrete sentence.
@@ -60,4 +64,3 @@ Raise specificity and usefulness by removing choices that are present because th
 ## Sources
 
 See `../../sources/anti-slop.sources.md`.
-

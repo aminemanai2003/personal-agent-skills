@@ -15,6 +15,10 @@ Find actionable correctness, compatibility, security, performance, and maintaina
 - Repository instructions, tests, public contracts, and relevant runtime context.
 - Check results, review threads, and known limitations.
 
+## Scope Boundary
+
+This skill is review-only unless the user separately authorizes fixes. Use `code-quality` for implementation/refactoring and `build-feature` for end-to-end delivery.
+
 ## Process
 
 1. Establish intent and expected behavior before judging implementation.
@@ -60,4 +64,3 @@ Find actionable correctness, compatibility, security, performance, and maintaina
 ## Sources
 
 See `../../sources/review-code.sources.md`.
-

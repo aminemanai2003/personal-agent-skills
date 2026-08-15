@@ -16,6 +16,10 @@ Find user-visible defects and weak design decisions by observing the interface i
 - Test credentials/data if authorized.
 - Available browser automation and accessibility tools.
 
+## Scope Boundary
+
+This is the rendered-evidence inspection method. Use `review-ui` when the task also needs a complete merge-readiness judgment, prioritized findings, or authorized fixes.
+
 ## Process
 
 1. Establish the primary workflow and expected states.
@@ -60,4 +64,3 @@ Find user-visible defects and weak design decisions by observing the interface i
 ## Sources
 
 See `../../sources/visual-ux-review.sources.md`.
-

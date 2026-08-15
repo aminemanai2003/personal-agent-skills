@@ -16,6 +16,10 @@ Turn visual inspection into prioritized, reproducible findings and, when explici
 - Authorized test data/credentials and current implementation diff.
 - Whether the request is review-only or includes fixes.
 
+## Scope Boundary
+
+This is the orchestration layer for UI findings, readiness, and authorized fixes. It uses `visual-ux-review` for rendered inspection and `frontend-design` only when a new direction is genuinely required.
+
 ## Process
 
 1. Inspect the product context, design tokens, route, and changed implementation.
@@ -61,4 +65,3 @@ Turn visual inspection into prioritized, reproducible findings and, when explici
 ## Sources
 
 See `../../sources/review-ui.sources.md`.
-

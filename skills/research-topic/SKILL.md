@@ -16,6 +16,10 @@ Produce a decision-ready answer whose claims, assumptions, conflicts, and remain
 - Available sources, datasets, repositories, and access limitations.
 - Expected output form and time budget.
 
+## Scope Boundary
+
+This owns an end-to-end research question and decision-ready synthesis. Use `research-quality` alone for a narrow evidence or claim audit.
+
 ## Process
 
 1. Frame the question, decision, definitions, and stopping criteria.
@@ -62,4 +66,3 @@ Produce a decision-ready answer whose claims, assumptions, conflicts, and remain
 ## Sources
 
 See `../../sources/research-topic.sources.md`.
-

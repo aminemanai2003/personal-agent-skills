@@ -16,6 +16,10 @@ Keep conclusions traceable to credible evidence and proportionate to what the so
 - Available primary sources, official documentation, datasets, and secondary analysis.
 - Reproducibility, privacy, time, and access constraints.
 
+## Scope Boundary
+
+This skill supplies evidence standards for any research. Use `research-topic` when the request is an end-to-end investigation with source collection, comparison, synthesis, and a recommendation.
+
 ## Process
 
 1. Frame a falsifiable question and define ambiguous terms.
@@ -60,4 +64,3 @@ Keep conclusions traceable to credible evidence and proportionate to what the so
 ## Sources
 
 See `../../sources/research-quality.sources.md`.
-

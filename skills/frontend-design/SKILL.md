@@ -16,6 +16,10 @@ Create an interface whose hierarchy, controls, content, and visual language foll
 - Content, data density, supported devices, accessibility needs, and technical stack.
 - Brand constraints and explicit visual references.
 
+## Scope Boundary
+
+Use this for creating or substantially reshaping a direction. For inspection of an existing rendered interface, use `visual-ux-review` or the higher-level `review-ui` workflow.
+
 ## Process
 
 1. Inspect the existing product and identify the first-screen job.
@@ -61,4 +65,3 @@ Create an interface whose hierarchy, controls, content, and visual language foll
 ## Sources
 
 See `../../sources/frontend-design.sources.md`.
-

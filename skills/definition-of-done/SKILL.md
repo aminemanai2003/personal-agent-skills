@@ -16,6 +16,10 @@ Turn "finished" into an evidence-backed claim matched to the task's actual blast
 - Available test, build, lint, type, browser, security, and data checks.
 - Constraints that prevented any expected verification.
 
+## Scope Boundary
+
+Use this to audit completion evidence and handoff readiness. It does not orient an unfamiliar repository or implement the missing behavior itself.
+
 ## Process
 
 1. Translate the request into observable outcomes.
