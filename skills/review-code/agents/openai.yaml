@@ -1,0 +1,3 @@
+interface:
+  display_name: "Review Code"
+  short_description: "Find concrete defects and merge risks in code changes"
