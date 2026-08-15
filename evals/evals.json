@@ -315,7 +315,27 @@
       "expected_skills": ["build-feature", "definition-of-done"],
       "forbidden_skills": ["project-start"],
       "expected_behavior": "Skip broad orientation and make the narrow change with proportional verification."
+    },
+    {
+      "id": "confirmed-ui-quality-01",
+      "prompt": "Build this product UI so it looks authored by a senior human designer and cannot be reused for an unrelated product by changing only the labels.",
+      "expected_skills": ["frontend-design", "anti-slop", "personal-operating-profile"],
+      "forbidden_skills": ["research-topic"],
+      "expected_behavior": "Derive hierarchy, content, interaction, and visual direction from the product domain, apply the relabeling test, and reject interchangeable AI-template composition."
+    },
+    {
+      "id": "confirmed-writing-quality-01",
+      "prompt": "Rewrite this document so it reads like a knowledgeable human wrote it, without canned transitions, repetitive conclusions, or generic AI-response structure.",
+      "expected_skills": ["personal-writing", "anti-slop", "personal-operating-profile"],
+      "forbidden_skills": ["frontend-design"],
+      "expected_behavior": "Reconstruct the prose from its evidence, audience, and purpose; preserve required disclosure and do not optimize mechanically for detector scores."
+    },
+    {
+      "id": "confirmed-paper-quality-01",
+      "prompt": "Develop this AI-assisted actuarial paper to a publishable human-expert standard with a real contribution, rigorous literature synthesis, reproducible methods, verified citations, and natural prose.",
+      "expected_skills": ["research-topic", "research-quality", "personal-writing", "anti-slop", "personal-operating-profile"],
+      "forbidden_skills": ["github-workflow"],
+      "expected_behavior": "Build a claim-evidence argument, verify every material citation and calculation, report uncertainty and limitations, line-edit synthetic prose patterns, and follow venue disclosure rules."
     }
   ]
 }
-
