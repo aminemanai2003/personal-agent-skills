@@ -48,7 +48,7 @@ Reach a defensible decision quickly enough to preserve momentum while exposing a
 - Analysis paralysis over a reversible choice.
 - Premature commitment before reading the repository.
 - A dependency chosen because it is familiar rather than necessary.
-- A vague “best practice” rationale with no project evidence.
+- A vague "best practice" rationale with no project evidence.
 - Asking the user a question that inspection or experimentation could answer.
 
 ## Examples
@@ -60,4 +60,3 @@ Reach a defensible decision quickly enough to preserve momentum while exposing a
 ## Sources
 
 See `../../sources/decision-making.sources.md`.
-
