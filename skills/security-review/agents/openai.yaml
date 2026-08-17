@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Review"
+  short_description: "Find exploitable security defects before release"
+  default_prompt: "Use $security-review to assess this change for concrete, reachable security risks without modifying it."

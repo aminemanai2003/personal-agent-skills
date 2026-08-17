@@ -378,6 +378,27 @@
       "expected_skills": ["code-quality"],
       "forbidden_skills": ["secure-development", "security-review"],
       "expected_behavior": "Make the low-risk refactor with focused verification without loading a security workflow that cannot change the outcome."
+    },
+    {
+      "id": "security-review-01",
+      "prompt": "Review this pull request for security issues. It adds an object lookup endpoint, file upload parsing, and an outbound webhook call; do not modify the patch.",
+      "expected_skills": ["security-review", "review-code"],
+      "forbidden_skills": ["secure-development"],
+      "expected_behavior": "Trace attacker influence through authorization, file handling, and outbound request controls; report only reachable findings with evidence, confidence, impact, and focused remedies."
+    },
+    {
+      "id": "security-review-02",
+      "prompt": "Audit this GitHub Actions release workflow for untrusted pull-request input, excessive permissions, dependency execution, and secret exposure. Return findings only.",
+      "expected_skills": ["security-review", "github-workflow"],
+      "forbidden_skills": ["secure-development"],
+      "expected_behavior": "Inspect event trust, permissions, checkout and dependency behavior, expression use, and credential reachability; distinguish confirmed risks from deployment facts that need verification."
+    },
+    {
+      "id": "security-review-03",
+      "prompt": "Implement a new password-reset flow with secure token lifecycle, session invalidation, and regression tests.",
+      "expected_skills": ["secure-development", "build-feature"],
+      "forbidden_skills": ["security-review"],
+      "expected_behavior": "Use the secure implementation workflow because the request authorizes changes; do not substitute a review-only report for the requested feature."
     }
   ]
 }
