@@ -6,7 +6,7 @@
 
 # Personal Agent Skills
 
-**Portable skills for authored UI, natural expert writing, and rigorous AI-assisted research.**
+**A curated library of portable agent skills for disciplined engineering, security, research, design, writing, and career work.**
 
 21 skills | Codex + Claude Code | 66 trigger scenarios
 
@@ -15,30 +15,34 @@
 
 </div>
 
-This repository turns a small set of quality preferences into installable `SKILL.md` packages. The skills do not make a model expert by themselves and they do not guarantee a better result. Their value is narrower: they make important judgment criteria explicit, reusable, and easier to verify across projects.
+This repository turns Amine's working standards and reusable workflows into 21 installable `SKILL.md` packages for Codex and Claude Code. The skills do not make a model expert by themselves or guarantee a better result. Their value is narrower and practical: they make important judgment criteria explicit, reusable, and easier to verify across projects.
 
-## Main objective
+## How the library works
 
-The system is optimized for three outcomes:
+Each package has a precise trigger description, a focused workflow, optional references, provenance notes, and positive or near-miss evaluation cases. Hosts can see the package metadata without loading every instruction body; the body and references are loaded progressively when the current task matches.
 
-| Outcome | Standard |
-| --- | --- |
-| Product-specific UI | The workflow, hierarchy, density, content, and visual direction should come from the product domain, not an interchangeable AI dashboard template. |
-| Natural expert writing | Prose should follow the reader's real questions and the material's logic without canned transitions, filler, repeated conclusions, or synthetic cadence. |
-| Serious research work | AI-assisted papers should have a defensible contribution, traceable evidence, reproducible methods, verified citations, bounded conclusions, and explicit limitations. |
+The library is organized around six practical areas:
+
+- quality and decision controls for assumptions, evidence, anti-slop review, and completion claims;
+- UI, writing, and research standards for authored output and defensible claims;
+- engineering and debugging workflows for implementation, diagnosis, and review;
+- security implementation and review for changed trust boundaries;
+- career workflows for truthful resumes, public proof, and focused applications;
+- GitHub and installation workflows for packaging, verification, and publication.
 
 ## Do the skills help?
 
-Yes, but not equally.
+The evidence is useful but bounded.
 
-The skills tied directly to the three outcomes above provide the clearest value. They add explicit tests and procedures that a capable model may not apply consistently on its own. The general engineering and GitHub skills are useful as workflow guardrails, but much of their advice overlaps with behavior already expected from a strong coding agent.
+The skills add explicit tests and procedures that a capable model may not apply consistently on its own. The original paired showcases evaluate UI, writing, and research; the newer debugging, security, and career packages currently have structural validation and trigger coverage, but not independent live quality benchmarks.
 
 | Area | Current evidence | Verdict |
 | --- | --- | --- |
 | UI | One same-model paired build. The skilled version has a more deliberate actuarial hierarchy, sharper exception-led workflow, and more domain-specific language. It also introduces page-level horizontal overflow at `390x844`, so the result is not an unqualified win. | Directionally useful; mobile quality still needs work. |
 | Writing | One same-model paired passage. The baseline missed the strict word limit at 331 words; the skilled version finished at 320 and led from the actual decision problem. | Clear improvement in this pair. |
 | Research | One same-model paired paper using the same four-source packet. Both were valid; the skilled version made the contribution, claim-evidence structure, and decision protocol more explicit. | Moderate improvement in this pair. |
-| General workflow | Package validators, trigger-case coverage, and installer tests pass. Live trigger precision, recall, and repeated-run variance are not measured. | Useful for consistency, not yet proven as a capability lift. |
+| Engineering, security, and career | The packages have focused workflows, provenance, and positive/near-miss trigger cases. Independent live quality comparisons are not yet measured. | Operationally specified; effectiveness remains unmeasured. |
+| Library-wide packaging | Package validators, 66 trigger cases, showcase validation, and installer regression tests pass. Live trigger precision, recall, and repeated-run variance are not measured. | Useful for consistency, not yet proven as a capability lift. |
 
 These are representative examples, not statistical benchmarks. See the [showcase methodology](evals/showcase/methodology.md) and [exact prompts](evals/showcase/prompts/).
 
@@ -119,6 +123,12 @@ python scripts/install_skills.py --target $env:USERPROFILE --host codex `
 
 Having many skills installed is not inherently harmful. Avoid duplicate packages with conflicting instructions, keep descriptions precise, and let task relevance control which skill bodies and references load.
 
+To install the complete library globally for Codex:
+
+```powershell
+python scripts/install_skills.py --target $env:USERPROFILE --host codex
+```
+
 ## Validation
 
 Install the development dependency and run the repository checks:
@@ -165,8 +175,10 @@ This project is released under the [MIT License](LICENSE). You may use, modify, 
 
 ## Project status
 
-The repository is usable as a personal V1, is MIT-licensed for unrestricted reuse, and its local deterministic checks pass. One evidence gap remains:
+The repository is usable as a personal V1, is MIT-licensed for unrestricted reuse, and its local deterministic checks pass. The current evidence gaps are explicit:
 
-- Repeated live model runs are still needed to measure trigger precision, result variance, and average quality lift.
+- Repeated live model runs are still needed to measure trigger precision, result variance, and average quality lift across all six areas.
+- The paired showcase currently covers UI, writing, and research rather than the newer debugging, security, and career workflows.
+- The skilled UI showcase still has page-level horizontal overflow at the `390x844` viewport.
 
-The current evidence supports a practical conclusion: the focused UI, writing, and research skills are worth using as judgment scaffolding; the remaining workflow skills should be installed selectively when their orchestration or verification contract is useful.
+The practical conclusion is narrower: install the full library when you want broad personal coverage, or select a smaller task-specific set when you want the easiest trigger behavior to audit. In both cases, relevance controls loading; installation count alone is not a quality problem.

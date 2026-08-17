@@ -1,6 +1,6 @@
 # Final Requirement Audit
 
-Audit date: 2026-08-15
+Audit date: 2026-08-17
 
 ## Evidence matrix
 
@@ -11,22 +11,22 @@ Audit date: 2026-08-15
 | Ecosystem research | `research/ecosystem-map.md` with 16 high-signal sources and adaptation/license boundaries | Pass |
 | Anti-slop system | `core/anti-slop.md` and `skills/anti-slop/` | Pass |
 | Definition-of-done system | `core/definition-of-done.md` and `skills/definition-of-done/` | Pass |
-| Foundational and composite skills | 15 validated packages under `skills/` | Pass |
-| Required workflows | `build-feature`, `review-code`, `review-ui`, `research-topic`, `project-start`, plus GitHub/UI/code workflows | Pass |
-| Provenance | 15 `sources/*.sources.md` files plus ecosystem map | Pass |
+| Foundational and composite skills | 21 validated packages under `skills/` | Pass |
+| Required workflows | `build-feature`, `review-code`, `review-ui`, `research-topic`, `project-start`, debugging, security, career, plus GitHub/UI/code workflows | Pass |
+| Provenance | 21 `sources/*.sources.md` files plus ecosystem map | Pass |
 | Codex and Claude usability | `scripts/install_skills.py`, `.agents/skills`, `.claude/skills`, adapter docs | Pass for packaging/discovery smoke; model run pending auth |
-| Conflict handling | `architecture/conflicts.md` and explicit scope boundaries in 10 skills | Pass |
-| Realistic evaluation | 48 trigger scenarios, coverage validator, three refinement iterations, and three same-model paired examples | Pass for deterministic artifact coverage; live trigger precision and repeated-run variance remain unmeasured |
+| Conflict handling | `architecture/conflicts.md` and explicit scope boundaries in 16 skills | Pass |
+| Realistic evaluation | 66 trigger scenarios, coverage validator, three refinement iterations, and three same-model paired examples | Pass for deterministic artifact coverage; live trigger precision and repeated-run variance remain unmeasured |
 | Usage and extension documentation | `README.md`, `docs/extension.md`, `CONTRIBUTING.md`, adapter docs | Pass |
 | Public reuse license | `LICENSE` and README license section | Pass; MIT License |
 
 ## Verification evidence
 
-- Official `quick_validate.py`: 15/15 skills valid.
-- `scripts/validate_repo.py`: 15 packages validated.
-- `scripts/validate_evals.py`: 48 cases across 15 skills validated.
+- Official `quick_validate.py`: the six newly added skills are valid; the repository validator covers all 21 packages.
+- `scripts/validate_repo.py`: 21 packages validated.
+- `scripts/validate_evals.py`: 66 cases across 21 skills validated.
 - `scripts/validate_showcase.py`: paired image dimensions, reported word counts, and DOI coverage validated.
-- Installer smoke test: 15 Codex packages and 15 Claude packages installed; overwrite safeguards covered by 3 unit tests.
+- Installer regression tests cover idempotent installation and overwrite safeguards; the six new Codex packages are installed globally under `~/.agents/skills` and match the canonical files.
 - `git diff --check`: clean.
 - Authored source ASCII scan: clean.
 - Remote `main` points at the pushed history; verify with `git ls-remote origin refs/heads/main`.
