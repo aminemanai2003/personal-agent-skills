@@ -16,14 +16,29 @@ project-start
 build-feature
   -> project-start
   -> code-quality
+  -> secure-development (security-sensitive boundaries only)
   -> frontend-design (UI work only)
   -> definition-of-done
   -> personal-writing (handoff)
+
+root-cause-debugging
+  -> code-quality (confirmed fix only)
+  -> decision-making (competing hypotheses or mitigation tradeoffs)
+  -> definition-of-done
+
+secure-development
+  -> decision-making
+  -> code-quality
+  -> definition-of-done
 
 review-code
   -> code-quality
   -> anti-slop
   -> definition-of-done (merge-readiness only)
+
+security-review
+  -> review-code
+  -> definition-of-done (release decision only)
 
 frontend-design
   -> personal-operating-profile
@@ -45,6 +60,20 @@ research-topic
   -> research-quality
   -> decision-making
 
+resume-and-ats
+  -> personal-writing
+  -> anti-slop
+
+professional-profile
+  -> personal-writing
+  -> anti-slop
+
+job-search-and-applications
+  -> research-quality (current opportunity facts only)
+  -> resume-and-ats (role-specific resume work)
+  -> professional-profile (public proof alignment)
+  -> personal-writing
+
 github-workflow
   -> definition-of-done
   -> personal-writing
@@ -57,4 +86,4 @@ anti-slop
   -> definition-of-done (completion claims only)
 ```
 
-Load only the smallest set that changes the outcome. Avoid cycles by treating profile, anti-slop, and definition-of-done as cross-cutting references rather than automatic triggers for every task.
+Installed skills remain metadata until their descriptions match the current task; their bodies and references should load progressively. Load only the smallest set that changes the outcome. Avoid cycles by treating profile, anti-slop, and definition-of-done as cross-cutting references rather than automatic triggers for every task.

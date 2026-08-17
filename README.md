@@ -4,7 +4,7 @@
 
 **Portable skills for authored UI, natural expert writing, and rigorous AI-assisted research.**
 
-15 skills | Codex + Claude Code | 48 trigger scenarios
+21 skills | Codex + Claude Code | 66 trigger scenarios
 
 [![Validate](https://github.com/aminemanai2003/personal-agent-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/aminemanai2003/personal-agent-skills/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -59,7 +59,7 @@ The raw captures are available for [desktop baseline](evals/showcase/outputs/ui-
 
 ## Skill map
 
-Install only the packages that can change the outcome. Loading all 15 is convenient, but a smaller task-specific set reduces trigger overlap and context cost.
+Installing all 21 is reasonable because Codex sees skill metadata first and loads a skill body only when its description matches the task. Clear trigger descriptions and near-miss evaluations matter more than a small installed count. For a project, a smaller task-specific set still reduces ambiguity and makes behavior easier to audit.
 
 | Layer | Skills | Role |
 | --- | --- | --- |
@@ -67,7 +67,9 @@ Install only the packages that can change the outcome. Loading all 15 is conveni
 | UI | `frontend-design`, `visual-ux-review`, `review-ui` | Create a domain-specific direction, inspect rendered states, and run complete UI readiness reviews. |
 | Writing | `personal-writing` | Produce concise, natural, limitation-aware technical prose. |
 | Research | `research-quality`, `research-topic` | Set evidence standards and carry an investigation through synthesis. |
-| Engineering | `project-start`, `decision-making`, `code-quality`, `build-feature`, `review-code` | Orient, decide, implement, verify, and review repository work. |
+| Engineering | `project-start`, `decision-making`, `code-quality`, `build-feature`, `review-code`, `root-cause-debugging` | Orient, decide, implement, diagnose, verify, and review repository work. |
+| Security | `secure-development`, `security-review` | Build across sensitive boundaries with secure defaults and review reachable security risk without automatic mutation. |
+| Career | `resume-and-ats`, `professional-profile`, `job-search-and-applications` | Produce truthful career artifacts, public proof, and focused application pipelines. |
 | GitHub | `github-workflow` | Move focused work through commits, reviews, checks, and publication without expanding authority. |
 
 The dependency and conflict boundaries are documented in [architecture/skill-dependencies.md](architecture/skill-dependencies.md) and [architecture/conflicts.md](architecture/conflicts.md).
@@ -98,6 +100,20 @@ python scripts/install_skills.py --target C:\path\to\project --host codex `
 Use `--host codex`, `--host claude`, or `--host both`. The installer is idempotent and refuses to overwrite a changed installed skill unless `--force` is supplied.
 
 Codex discovers packages from `.agents/skills`. Claude Code uses `.claude/skills`. Host-specific notes are in [adapters/codex](adapters/codex/README.md) and [adapters/claude-code](adapters/claude-code/README.md).
+
+To install selected skills globally for Codex, target your user directory so the installer writes to `~/.agents/skills`:
+
+```powershell
+python scripts/install_skills.py --target $env:USERPROFILE --host codex `
+  --skill root-cause-debugging `
+  --skill secure-development `
+  --skill security-review `
+  --skill resume-and-ats `
+  --skill professional-profile `
+  --skill job-search-and-applications
+```
+
+Having many skills installed is not inherently harmful. Avoid duplicate packages with conflicting instructions, keep descriptions precise, and let task relevance control which skill bodies and references load.
 
 ## Validation
 
