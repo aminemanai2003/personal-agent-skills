@@ -1,0 +1,4 @@
+interface:
+  display_name: "Root Cause Debugging"
+  short_description: "Reproduce, isolate, fix, and prevent regressions"
+  default_prompt: "Use $root-cause-debugging to diagnose this failure from reproduction through regression verification."

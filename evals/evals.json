@@ -336,6 +336,27 @@
       "expected_skills": ["research-topic", "research-quality", "personal-writing", "anti-slop", "personal-operating-profile"],
       "forbidden_skills": ["github-workflow"],
       "expected_behavior": "Build a claim-evidence argument, verify every material citation and calculation, report uncertainty and limitations, line-edit synthetic prose patterns, and follow venue disclosure rules."
+    },
+    {
+      "id": "root-cause-debugging-01",
+      "prompt": "This integration test fails only in CI. Reproduce what you can, trace the value across workflow, build, and test boundaries, then fix the confirmed cause and add a regression check.",
+      "expected_skills": ["root-cause-debugging", "code-quality"],
+      "forbidden_skills": ["research-topic"],
+      "expected_behavior": "Collect boundary evidence, form and test one hypothesis at a time, fix the originating condition, and verify the original CI-relevant path without exposing secrets."
+    },
+    {
+      "id": "root-cause-debugging-02",
+      "prompt": "A production worker times out intermittently after a recent release. Diagnose the cause without simply increasing every timeout, then state what remains unverified outside production.",
+      "expected_skills": ["root-cause-debugging", "decision-making", "definition-of-done"],
+      "forbidden_skills": ["frontend-design"],
+      "expected_behavior": "Separate mitigation from diagnosis, compare the release and timing evidence, test a falsifiable bottleneck hypothesis, and calibrate the completion claim to available production evidence."
+    },
+    {
+      "id": "root-cause-debugging-03",
+      "prompt": "The typo causing this exact syntax error is already identified on line 12. Correct it and run the focused parser test.",
+      "expected_skills": ["build-feature", "code-quality"],
+      "forbidden_skills": ["root-cause-debugging"],
+      "expected_behavior": "Make the known mechanical correction and verify it without launching an unnecessary root-cause investigation."
     }
   ]
 }
