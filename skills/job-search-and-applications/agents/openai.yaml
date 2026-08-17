@@ -1,0 +1,4 @@
+interface:
+  display_name: "Job Search and Applications"
+  short_description: "Target roles and produce focused applications"
+  default_prompt: "Use $job-search-and-applications to prioritize roles and prepare a truthful, tailored application."

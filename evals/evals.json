@@ -441,6 +441,27 @@
       "expected_skills": ["job-search-and-applications"],
       "forbidden_skills": ["professional-profile"],
       "expected_behavior": "Use the search and application workflow because the task is campaign execution rather than public profile editing."
+    },
+    {
+      "id": "job-search-and-applications-01",
+      "prompt": "Find and prioritize software engineering internships that match my location, enrollment, graduation date, and work-authorization constraints, then create an application tracker.",
+      "expected_skills": ["job-search-and-applications", "research-quality"],
+      "forbidden_skills": ["resume-and-ats"],
+      "expected_behavior": "Define hard constraints, verify current posting facts from authoritative sources, rank transparently, preserve unknowns, and create source-dated next actions without submitting."
+    },
+    {
+      "id": "job-search-and-applications-02",
+      "prompt": "Prepare a tailored application package and a concise recruiter message for this role, but do not submit or send anything.",
+      "expected_skills": ["job-search-and-applications", "resume-and-ats", "professional-profile", "personal-writing"],
+      "forbidden_skills": ["github-workflow"],
+      "expected_behavior": "Map requirements to verified evidence, coordinate consistent resume and profile proof, draft role-specific outreach, and preserve the external-action boundary."
+    },
+    {
+      "id": "job-search-and-applications-03",
+      "prompt": "Fix the dates and improve three bullets in my existing resume; I already selected the job and need no search or outreach help.",
+      "expected_skills": ["resume-and-ats"],
+      "forbidden_skills": ["job-search-and-applications"],
+      "expected_behavior": "Perform the resume-only revision without loading the broader search, tracking, and outreach workflow."
     }
   ]
 }
