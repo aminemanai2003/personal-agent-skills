@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resume and ATS"
+  short_description: "Create truthful resumes that parse and persuade"
+  default_prompt: "Use $resume-and-ats to tailor this resume to the role while preserving factual accuracy."

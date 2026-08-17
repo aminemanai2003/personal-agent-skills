@@ -399,6 +399,27 @@
       "expected_skills": ["secure-development", "build-feature"],
       "forbidden_skills": ["security-review"],
       "expected_behavior": "Use the secure implementation workflow because the request authorizes changes; do not substitute a review-only report for the requested feature."
+    },
+    {
+      "id": "resume-and-ats-01",
+      "prompt": "Tailor my software engineering resume to this backend internship description. Keep every claim truthful, improve the bullets, and show me any missing evidence.",
+      "expected_skills": ["resume-and-ats", "personal-writing"],
+      "forbidden_skills": ["professional-profile"],
+      "expected_behavior": "Map requirements to verified experience, foreground relevant evidence, improve action-context-result bullets, and flag gaps rather than inventing skills or metrics."
+    },
+    {
+      "id": "resume-and-ats-02",
+      "prompt": "Audit this CV for ATS parsing and recruiter readability, then revise the structure without promising an ATS score.",
+      "expected_skills": ["resume-and-ats"],
+      "forbidden_skills": ["job-search-and-applications"],
+      "expected_behavior": "Inspect headings, reading order, dates, contact text, evidence density, and target alignment while explaining that parser behavior varies by employer and vendor."
+    },
+    {
+      "id": "resume-and-ats-03",
+      "prompt": "Rewrite my LinkedIn headline and About section for data engineering roles; I am not changing my resume.",
+      "expected_skills": ["professional-profile"],
+      "forbidden_skills": ["resume-and-ats"],
+      "expected_behavior": "Use the public-profile workflow and avoid loading the full resume and ATS process for a LinkedIn-only request."
     }
   ]
 }
