@@ -1,0 +1,4 @@
+interface:
+  display_name: "Secure Development"
+  short_description: "Build sensitive software with secure defaults"
+  default_prompt: "Use $secure-development to implement this sensitive workflow with explicit trust boundaries and secure defaults."

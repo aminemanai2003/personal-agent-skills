@@ -357,6 +357,27 @@
       "expected_skills": ["build-feature", "code-quality"],
       "forbidden_skills": ["root-cause-debugging"],
       "expected_behavior": "Make the known mechanical correction and verify it without launching an unnecessary root-cause investigation."
+    },
+    {
+      "id": "secure-development-01",
+      "prompt": "Implement a multi-tenant endpoint that lets account administrators update billing contacts. Include authorization, validation, audit behavior, and cross-tenant regression tests.",
+      "expected_skills": ["secure-development", "build-feature", "code-quality"],
+      "forbidden_skills": ["security-review"],
+      "expected_behavior": "Derive actor and tenant from validated authentication state, enforce server-side object and action authorization, constrain accepted fields, audit the privileged change, and test cross-tenant denial."
+    },
+    {
+      "id": "secure-development-02",
+      "prompt": "Design the browser session and password-reset flow for this application. Decide between sessions and tokens from the architecture, protect secrets, and do not default sensitive material to localStorage.",
+      "expected_skills": ["secure-development", "decision-making"],
+      "forbidden_skills": ["security-review"],
+      "expected_behavior": "Model the clients and trust boundaries, choose established primitives, define cookie or token validation and lifecycle, protect recovery, and explain residual tradeoffs without inventing cryptography."
+    },
+    {
+      "id": "secure-development-03",
+      "prompt": "Rename this internal variable and update its unit test; no API, data, authentication, dependency, or deployment behavior changes.",
+      "expected_skills": ["code-quality"],
+      "forbidden_skills": ["secure-development", "security-review"],
+      "expected_behavior": "Make the low-risk refactor with focused verification without loading a security workflow that cannot change the outcome."
     }
   ]
 }
