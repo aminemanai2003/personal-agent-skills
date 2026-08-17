@@ -420,6 +420,27 @@
       "expected_skills": ["professional-profile"],
       "forbidden_skills": ["resume-and-ats"],
       "expected_behavior": "Use the public-profile workflow and avoid loading the full resume and ATS process for a LinkedIn-only request."
+    },
+    {
+      "id": "professional-profile-01",
+      "prompt": "Improve my LinkedIn headline, About, skills, and Featured sections for entry-level cloud engineering roles using only the evidence in my projects.",
+      "expected_skills": ["professional-profile", "personal-writing"],
+      "forbidden_skills": ["resume-and-ats"],
+      "expected_behavior": "Make the role direction clear, connect claims to verified projects, select inspectable proof, and flag gaps without inventing production experience or platform guarantees."
+    },
+    {
+      "id": "professional-profile-02",
+      "prompt": "Review my portfolio and GitHub profile so recruiters can understand my contribution, technical decisions, and project limitations quickly.",
+      "expected_skills": ["professional-profile", "anti-slop"],
+      "forbidden_skills": ["job-search-and-applications"],
+      "expected_behavior": "Apply the first-scan test, replace generic claims with artifact evidence, clarify ownership and project status, and keep the public narrative consistent."
+    },
+    {
+      "id": "professional-profile-03",
+      "prompt": "Build a prioritized list of internships, track deadlines, tailor each application, and draft recruiter follow-ups.",
+      "expected_skills": ["job-search-and-applications"],
+      "forbidden_skills": ["professional-profile"],
+      "expected_behavior": "Use the search and application workflow because the task is campaign execution rather than public profile editing."
     }
   ]
 }

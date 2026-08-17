@@ -1,0 +1,4 @@
+interface:
+  display_name: "Professional Profile"
+  short_description: "Strengthen LinkedIn and portfolio evidence"
+  default_prompt: "Use $professional-profile to improve this LinkedIn or portfolio profile for the target role."
