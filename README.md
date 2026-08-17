@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/amine-skills-bible-banner.png" alt="Amine's Skills Bible - Personal AI Agent Skill Library" width="100%">
+</p>
+
 <div align="center">
 
 # Personal Agent Skills
